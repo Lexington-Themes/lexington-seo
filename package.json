@@ -1,0 +1,58 @@
+{
+  "name": "@michael-andreuzza/seo",
+  "version": "0.1.0",
+  "description": "SEO component for Astro projects",
+  "homepage": "https://github.com/michael-andreuzza/lexington-seo",
+  "bugs": {
+    "url": "https://github.com/michael-andreuzza/lexington-seo/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/michael-andreuzza/lexington-seo.git"
+  },
+  "author": {
+    "name": "Michael Andreuzza",
+    "url": "https://github.com/michael-andreuzza"
+  },
+  "license": "MIT",
+  "type": "module",
+  "main": "index.ts",
+  "types": "src/types.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": "./index.ts",
+    "./types": "./src/types.ts",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src",
+    "index.ts"
+  ],
+  "keywords": [
+    "astro-component",
+    "withastro",
+    "astro",
+    "lexington",
+    "seo",
+    "astro-seo",
+    "astro-integration"
+  ],
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@types/html-escaper": "^3.0.0",
+    "@types/jest": "^29.5.4",
+    "astro": "^1.2.1 || ^2.0.0 || ^3.0.0-beta.0 || ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0",
+    "html-escaper": "^3.0.3",
+    "html-validate": "^8.18.2",
+    "jest": "^29.6.3",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.1.6"
+  },
+  "peerDependencies": {
+    "astro": "^1.2.1 || ^2.0.0 || ^3.0.0-beta.0 || ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0"
+  }
+}
