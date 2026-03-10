@@ -1,14 +1,14 @@
 {
-  "name": "@michael-andreuzza/seo",
+  "name": "@lexingtonthemes/seo",
   "version": "0.1.0",
   "description": "SEO component for Astro projects",
-  "homepage": "https://github.com/michael-andreuzza/lexington-seo",
+  "homepage": "https://github.com/Lexington-Themes/lexington-seo",
   "bugs": {
-    "url": "https://github.com/michael-andreuzza/lexington-seo/issues"
+    "url": "https://github.com/Lexington-Themes/lexington-seo/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/michael-andreuzza/lexington-seo.git"
+    "url": "https://github.com/Lexington-Themes/lexington-seo.git"
   },
   "author": {
     "name": "Michael Andreuzza",

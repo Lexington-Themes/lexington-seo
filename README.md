@@ -1,4 +1,4 @@
-# @michael-andreuzza/seo
+# @lexingtonthemes/seo
 
 SEO component for Astro projects.
 
@@ -7,7 +7,7 @@ This package renders SEO `<meta>` and `<link>` tags in your page `<head>` using 
 ## Install
 
 ```bash
-npm i @michael-andreuzza/seo
+npm i @lexingtonthemes/seo
 ```
 
 ## Quick Start
@@ -16,7 +16,7 @@ Use it directly in a page or layout:
 
 ```astro
 ---
-import { AstroSeo } from "@michael-andreuzza/seo";
+import { AstroSeo } from "@lexingtonthemes/seo";
 ---
 
 <html lang="en">
@@ -39,7 +39,7 @@ import { AstroSeo } from "@michael-andreuzza/seo";
 
 ```astro
 ---
-import { AstroSeo } from "@michael-andreuzza/seo";
+import { AstroSeo } from "@lexingtonthemes/seo";
 ---
 
 <AstroSeo
@@ -53,7 +53,7 @@ import { AstroSeo } from "@michael-andreuzza/seo";
 
 ```astro
 ---
-import { AstroSeo } from "@michael-andreuzza/seo";
+import { AstroSeo } from "@lexingtonthemes/seo";
 ---
 
 <AstroSeo
@@ -86,7 +86,7 @@ import { AstroSeo } from "@michael-andreuzza/seo";
 
 ```astro
 ---
-import { AstroSeo } from "@michael-andreuzza/seo";
+import { AstroSeo } from "@lexingtonthemes/seo";
 ---
 
 <AstroSeo
@@ -101,7 +101,7 @@ import { AstroSeo } from "@michael-andreuzza/seo";
 
 ```astro
 ---
-import { AstroSeo } from "@michael-andreuzza/seo";
+import { AstroSeo } from "@lexingtonthemes/seo";
 ---
 
 <AstroSeo
@@ -119,7 +119,7 @@ import { AstroSeo } from "@michael-andreuzza/seo";
 
 ```astro
 ---
-import { AstroSeo } from "@michael-andreuzza/seo";
+import { AstroSeo } from "@lexingtonthemes/seo";
 ---
 
 <AstroSeo
@@ -143,7 +143,7 @@ If your existing themes already use `AstroSeo`, only the import path changes:
 ```astro
 ---
 import { AstroSeo } from "@astrolib/seo";
-import { AstroSeo } from "@michael-andreuzza/seo";
+import { AstroSeo } from "@lexingtonthemes/seo";
 ---
 ```
 
