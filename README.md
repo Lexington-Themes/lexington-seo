@@ -223,3 +223,9 @@ For full types, see `src/types.ts`.
 npm install
 npm test
 ```
+
+## License
+
+MIT © [Lexington Themes](https://lexingtonthemes.com)
+
+
