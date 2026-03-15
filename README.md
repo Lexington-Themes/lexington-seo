@@ -57,20 +57,20 @@ import { AstroSeo } from "@lexingtonthemes/seo";
 ---
 
 <AstroSeo
-  title="Astro Landing Page Kit"
-  description="Fast, modern landing pages built with Astro."
-  canonical="https://example.com/templates/landing-kit"
+  title="Premium Astro themes"
+  description="Fast, modern websites built with Astro."
+  canonical="https://example.com/templates/themes"
   openGraph={{
-    url: "https://example.com/templates/landing-kit",
-    title: "Astro Landing Page Kit",
-    description: "Fast, modern landing pages built with Astro.",
+    url: "https://example.com/templates/themes",
+    title: "Astro themes",
+    description: "Fast, modern websites built with Astro.",
     site_name: "Lexington Themes",
     images: [
       {
-        url: "https://example.com/og/landing-kit.jpg",
+        url: "https://example.com/og/themes.jpg",
         width: 1200,
         height: 630,
-        alt: "Landing Page Kit Preview",
+        alt: "themes Preview",
       },
     ],
   }}
@@ -260,5 +260,3 @@ npm test
 ## License
 
 MIT © [Lexington Themes](https://lexingtonthemes.com)
-
-
