@@ -2,7 +2,7 @@
 
 SEO component for Astro projects.
 
-This package renders SEO `<meta>` and `<link>` tags in your page `<head>` using a single `AstroSeo` component.
+This package renders SEO tags in your page `<head>` using a single `AstroSeo` component: **meta** and **link** tags (title, description, canonical), **Open Graph**, **Twitter Cards**, **Facebook** (`fb:app_id`), **robots** (noindex, nofollow, advanced directives), **language alternates** (hreflang), **mobile alternate**, and **JSON-LD** structured data.
 
 ## Install
 
@@ -136,6 +136,34 @@ import { AstroSeo } from "@lexingtonthemes/seo";
 />
 ```
 
+### JSON-LD (structured data)
+
+```astro
+---
+import { AstroSeo } from "@lexingtonthemes/seo";
+---
+
+<AstroSeo
+  title="Lexington Themes"
+  description="Production-ready Astro themes."
+  canonical="https://example.com/"
+  jsonLd={[
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      name: "Lexington Themes",
+      url: "https://example.com",
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: "Lexington Themes",
+      url: "https://example.com",
+    },
+  ]}
+/>
+```
+
 ## Migrating from `@astrolib/seo`
 
 If your existing themes already use `AstroSeo`, only the import path changes:
@@ -158,6 +186,7 @@ Main props include:
 - `noindex`, `nofollow`, `robotsProps`
 - `languageAlternates`, `mobileAlternate`
 - `additionalMetaTags`, `additionalLinkTags`
+- `jsonLd` – one or more JSON-LD schema objects (see below)
 
 For full types, see `src/types.ts`.
 
@@ -216,6 +245,10 @@ For full types, see `src/types.ts`.
 
 - Add custom HTML5 / RDFa / HTTP-Equiv meta tags via `additionalMetaTags`
 - Add custom link tags (icon, manifest, preconnect, alternate, etc.) via `additionalLinkTags`
+
+### JSON-LD
+
+- Pass one or more [JSON-LD](https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data) schema objects via the `jsonLd` prop. Each object is rendered as a `<script type="application/ld+json">` tag. Use a single object or an array of objects for multiple schemas (e.g. Organization + WebSite). Values are stringified and safely escaped (e.g. `</script>` in strings) so the markup is valid.
 
 ## Development
 

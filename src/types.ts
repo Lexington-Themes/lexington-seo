@@ -452,4 +452,6 @@ export interface AstroSeoProps {
   twitter?: Twitter;
   additionalMetaTags?: ReadonlyArray<MetaTag>;
   additionalLinkTags?: ReadonlyArray<LinkTag>;
+  /** One or more JSON-LD schema objects to render as script tags. */
+  jsonLd?: Record<string, unknown> | ReadonlyArray<Record<string, unknown>>;
 }

@@ -1,7 +1,7 @@
 {
   "name": "@lexingtonthemes/seo",
   "version": "0.1.0",
-  "description": "SEO component for Astro projects",
+  "description": "Astro SEO: meta, Open Graph, Twitter, JSON-LD, canonical, robots",
   "homepage": "https://github.com/Lexington-Themes/lexington-seo",
   "bugs": {
     "url": "https://github.com/Lexington-Themes/lexington-seo/issues"
@@ -31,12 +31,12 @@
     "index.ts"
   ],
   "keywords": [
-    "astro-component",
-    "withastro",
-    "astro",
-    "lexington",
     "seo",
+    "astro",
     "astro-seo",
+    "lexington",
+    "withastro",
+    "astro-component",
     "astro-integration"
   ],
   "scripts": {

@@ -438,4 +438,55 @@ describe("buildTags function", () => {
     const htmlResult = await validate.validateString(result);
     expect(htmlResult.valid).toBe(true);
   });
+
+  describe("jsonLd", () => {
+    it("should not render script tags when jsonLd is not provided", () => {
+      const result = buildTags({ title: "Page" });
+      expect(result).not.toContain("application/ld+json");
+      expect(result).not.toContain("<script");
+    });
+
+    it("should render one script tag for a single jsonLd object", async () => {
+      const schema = {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        name: "Home",
+      };
+      const result = buildTags({ jsonLd: schema });
+      expect(result).toContain('type="application/ld+json"');
+      expect(result).toContain('{"@context":"https://schema.org","@type":"WebPage","name":"Home"}');
+
+      const htmlResult = await validate.validateString(result);
+      expect(htmlResult.valid).toBe(true);
+    });
+
+    it("should render multiple script tags for jsonLd array", async () => {
+      const schemas = [
+        { "@context": "https://schema.org", "@type": "Organization", name: "Acme" },
+        { "@context": "https://schema.org", "@type": "WebSite", name: "Acme Site" },
+      ];
+      const result = buildTags({ jsonLd: schemas });
+      const scriptCount = (result.match(/type="application\/ld\+json"/g) || []).length;
+      expect(scriptCount).toBe(2);
+      expect(result).toContain('"@type":"Organization"');
+      expect(result).toContain('"@type":"WebSite"');
+
+      const htmlResult = await validate.validateString(result);
+      expect(htmlResult.valid).toBe(true);
+    });
+
+    it("should escape </script> in jsonLd string values to prevent breaking out of script tag", async () => {
+      const schema = {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        name: "Page with </script> in text",
+      };
+      const result = buildTags({ jsonLd: schema });
+      expect(result).toContain('\\/script');
+      expect(result).not.toMatch(/<script[^>]*>[\s\S]*<script/i);
+
+      const htmlResult = await validate.validateString(result);
+      expect(htmlResult.valid).toBe(true);
+    });
+  });
 });

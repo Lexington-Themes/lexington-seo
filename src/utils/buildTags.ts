@@ -453,5 +453,19 @@ export const buildTags = (config: AstroSeoProps): string => {
     });
   }
 
+  // JSON-LD
+  if (config.jsonLd) {
+    const schemas = Array.isArray(config.jsonLd)
+      ? config.jsonLd
+      : [config.jsonLd];
+    for (const schema of schemas) {
+      if (schema && typeof schema === "object") {
+        let json = JSON.stringify(schema);
+        json = json.replace(/<\/script/gi, "<\\/script");
+        addTag(`<script type="application/ld+json">${json}</script>`);
+      }
+    }
+  }
+
   return tagsToRender.trim();
 };
